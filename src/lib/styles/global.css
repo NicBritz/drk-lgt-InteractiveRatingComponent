@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+/* variables */
+:root {
+	--very-dark-blue: hsl(216, 12%, 8%);
+	--dark-blue: hsl(213, 19%, 18%);
+	--light-grey: hsl(217, 12%, 63%);
+	--medium-grey: hsl(216, 12%, 54%);
+	--orange: hsl(25, 97%, 53%);
+	--pure-white: hsl(0, 0%, 100%);
+	--black-gradient: radial-gradient(#232a34, #181e27);
+}
+/* normalize css */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Overpass', sans-serif;
+	background-color: var(--very-dark-blue);
+	font-size: 15px;
+}

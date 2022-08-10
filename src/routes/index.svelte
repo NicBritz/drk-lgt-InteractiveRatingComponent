@@ -1,2 +1,24 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import { showThankYou } from '$lib/stores.js';
+	import Rating from '$lib/components/rating.svelte';
+	import ThankYou from '../lib/components/thankYou.svelte';
+</script>
+
+<div class="container">
+	{#if $showThankYou}
+		<ThankYou />
+	{:else}
+		<Rating />
+	{/if}
+</div>
+
+<style>
+	.container {
+		height: 100vh;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+</style>
