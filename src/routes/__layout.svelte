@@ -16,6 +16,6 @@
 		width: 100%;
 		text-align: center;
 		color: var(--light-grey);
-		padding-bottom: 1rem;
+		padding-bottom: 1.5rem;
 	}
 </style>
