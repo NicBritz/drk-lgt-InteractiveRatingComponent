@@ -1,6 +1,6 @@
 <script>
 	import '$lib/styles/global.css';
-	import Attribution from '$lib/components/attribution.svelte';
+	import Attribution from '$lib/components/Attribution.svelte';
 </script>
 
 <slot />
