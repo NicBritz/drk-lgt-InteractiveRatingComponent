@@ -1,10 +1,11 @@
 <script>
-	import RatingNum from './RatingNum.svelte';
+	import RatingNum from './RatingNumber.svelte';
 	import { showThankYou, rating } from '$lib/stores.js';
 
 	let valid = true;
 
 	function submitRating() {
+		//validate before submitting
 		if (!$rating > 0) {
 			valid = false;
 			return;
@@ -14,44 +15,48 @@
 	}
 </script>
 
-<div class="card">
-	<!-- Star icon -->
-	<div class="star-container">
+<div class="rating-card">
+	<!-- star icon -->
+	<div class="rating-card__star-icon-container">
 		<img src="/icon-star.svg" alt="star icon" />
 	</div>
-	<!-- heading text -->
-	<h1 class="heading">How did we do?</h1>
 
-	<!-- description text -->
-	<p class="description">
+	<!-- CTA heading text -->
+	<h1 class="rating-card__cta-heading">How did we do?</h1>
+
+	<!-- CTA description text -->
+	<p class="rating-card__cta-description">
 		Please let us know how we did with your support request. All feedback is appreciated to help us
 		improve our offering!
 	</p>
+
 	<!-- ratings -->
-	<div class="rating-container">
+	<div class="rating-card__ratings-container">
 		<RatingNum value="1" />
 		<RatingNum value="2" />
 		<RatingNum value="3" />
 		<RatingNum value="4" />
 		<RatingNum value="5" />
 	</div>
+
 	<!-- submit button -->
 	<button on:click={submitRating}> Submit </button>
 
+	<!-- validation error -->
 	{#if !valid}
-		<p class="invalid">Please select a rating :)</p>
+		<p class="rating-card__invalid">Please select a rating :)</p>
 	{/if}
 </div>
 
 <style>
-	.card {
+	.rating-card {
 		border-radius: 30px;
 		max-width: 412px;
 		margin: 24px;
 		background-image: var(--black-gradient);
 	}
 
-	.star-container {
+	.rating-card__star-icon-container {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -62,12 +67,12 @@
 		margin: 32px;
 	}
 
-	.star-container img {
+	.rating-card__star-icon-container img {
 		width: 16px;
 		height: 16px;
 	}
 
-	.heading {
+	.rating-card__cta-heading {
 		line-height: 36px;
 		font-size: 28px;
 		font-weight: 700;
@@ -75,15 +80,13 @@
 		margin: 0 32px 32px 32px;
 	}
 
-	.description {
+	.rating-card__cta-description {
 		line-height: 24px;
-		font-size: 15px;
-		font-weight: 400;
 		color: var(--light-grey);
 		margin: 0 32px 32px 32px;
 	}
 
-	.rating-container {
+	.rating-card__ratings-container {
 		display: flex;
 		justify-content: space-between;
 		max-width: 341px;
@@ -98,7 +101,6 @@
 		border: none;
 		text-transform: uppercase;
 		color: var(--pure-white);
-		font-size: 15px;
 		font-weight: 700;
 		letter-spacing: 2px;
 		line-height: 19px;
@@ -112,40 +114,39 @@
 		color: var(--orange);
 	}
 
-	.invalid {
+	.rating-card__invalid {
 		color: var(--orange);
 		text-align: center;
 		font-size: 12px;
-		font-weight: 400;
 		margin: -16px 32px 16px 32px;
 	}
-
+	/* media queries for smaller screens */
 	@media (max-width: 375px) {
-		.card {
+		.rating-card {
 			max-width: 100%;
 			margin: 24px;
 		}
-		.star-container {
+		.rating-card__star-icon-container {
 			margin: 24px 0 0 24px;
 			width: 40px;
 			height: 40px;
 		}
 
-		.star-container img {
+		.rating-card__star-icon-container img {
 			width: 14px;
 			height: 14px;
 		}
-		.heading {
+		.rating-card__cta-heading {
 			margin: 16px 24px 0 24px;
 			font-size: 24px;
 			line-height: 30px;
 		}
-		.description {
+		.rating-card__cta-description {
 			margin: 10px 24px 24px 24px;
 			font-size: 14px;
 			line-height: 22px;
 		}
-		.rating-container {
+		.rating-card__ratings-container {
 			max-width: 100%;
 			margin: 0 24px;
 		}

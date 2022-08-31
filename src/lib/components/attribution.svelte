@@ -12,5 +12,10 @@
 	}
 	.attribution a {
 		color: var(--orange);
+		text-decoration: none;
+	}
+
+	.attribution a:hover {
+		text-decoration: underline;
 	}
 </style>

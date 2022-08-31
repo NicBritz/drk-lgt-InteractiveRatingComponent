@@ -1,5 +1,7 @@
 <script>
 	import { rating } from '$lib/stores.js';
+
+	// props:
 	export let value = 0;
 
 	function updateRating() {
@@ -7,12 +9,12 @@
 	}
 </script>
 
-<p on:click={updateRating} class="rating-container" class:active={value === $rating}>
+<button on:click={updateRating} class="rating-button" class:active={value === $rating}>
 	{value}
-</p>
+</button>
 
 <style>
-	.rating-container {
+	.rating-button {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -25,10 +27,11 @@
 		font-weight: 700;
 		line-height: 24px;
 		letter-spacing: 0.2px;
-		transition: all 0.2s ease-in-out;
+		transition: all 0.3s ease-in-out;
+		border-style: none;
 	}
 
-	.rating-container:hover {
+	.rating-button:hover {
 		cursor: pointer;
 		background-color: var(--orange);
 		color: var(--pure-white);
@@ -40,7 +43,7 @@
 	}
 
 	@media (max-width: 375px) {
-		.rating-container {
+		.rating-button {
 			width: 42px;
 			height: 42px;
 		}
