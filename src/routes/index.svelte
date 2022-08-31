@@ -1,7 +1,7 @@
 <script>
 	import { showThankYou } from '$lib/stores.js';
 	import Rating from '$lib/components/rating.svelte';
-	import ThankYou from '$lib/components/ThankYou.svelte';
+	import ThankYou from '$lib/components/Thankyou.svelte';
 </script>
 
 <section class="page-container">
