@@ -1,5 +1,5 @@
 <script>
-	import RatingNum from './RatingNumber.svelte';
+	import RatingNumber from './RatingNumber.svelte';
 	import { showThankYou, rating } from '$lib/stores.js';
 
 	let valid = true;
@@ -32,11 +32,11 @@
 
 	<!-- ratings -->
 	<div class="rating-card__ratings-container">
-		<RatingNum value="1" />
-		<RatingNum value="2" />
-		<RatingNum value="3" />
-		<RatingNum value="4" />
-		<RatingNum value="5" />
+		<RatingNumber value="1" />
+		<RatingNumber value="2" />
+		<RatingNumber value="3" />
+		<RatingNumber value="4" />
+		<RatingNumber value="5" />
 	</div>
 
 	<!-- submit button -->
