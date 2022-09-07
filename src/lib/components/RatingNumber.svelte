@@ -1,8 +1,9 @@
 <script>
+	// @ts-nocheck
+
 	import { rating } from '$lib/stores.js';
 
-	// props:
-	export let value = 0;
+	export let value = '0';
 
 	function updateRating() {
 		rating.set(value);
